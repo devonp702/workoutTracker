@@ -30,7 +30,15 @@ mongoose.connect(
 );
 
 // api routes
-
+app.get("/api/workouts", (req, res) => {
+  db.Workout.find({})
+    .then(dbworkout => {
+      res.json(dbworkout);
+    })
+    .catch(err => {
+      res.json(err);
+    })
+});
 
 // html routes
 app.get("/", (req, res) => {
