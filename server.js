@@ -40,6 +40,18 @@ app.get("/api/workouts", (req, res) => {
     })
 });
 
+app.put("/api/workouts/:id", (req, res) => {
+  db.Workout.find({})
+});
+
+app.post("/api/workouts", (req, res) => {
+  //
+});
+
+app.get("/api/workouts/range", (req, res) => {
+  //
+});
+
 // html routes
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/index.html"));
