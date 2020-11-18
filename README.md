@@ -3,8 +3,9 @@
   [github](https://github.com/devonp702/workoutTracker)
 
   [heroku](https://lit-plains-44631.herokuapp.com/)
+  ![Screenshot](main.png)
 
-  ![Include a screenshot](screenshot.png)
+  ![Screenshot](screenshot.png)
 
   ## Table of Contents
 * [Introduction](#introduction)
