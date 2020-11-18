@@ -37,19 +37,38 @@ app.get("/api/workouts", (req, res) => {
     })
     .catch(err => {
       res.json(err);
-    })
+    });
 });
 
 app.put("/api/workouts/:id", (req, res) => {
-  db.Workout.find({})
+  db.Workout.findOneAndUpdate(req.params.id, req.body) 
+  .then(data => {
+    res.json(data);
+  })
+  .catch(err => {
+    res.json(err);
+  });
 });
 
 app.post("/api/workouts", (req, res) => {
-  //
+  db.Workout.create(req.body)
+  // .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { exercise: _id } }, { new: true }))
+    .then(dbworkout => {
+      res.json(dbworkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 });
 
 app.get("/api/workouts/range", (req, res) => {
-  //
+  db.Workout.find({}).limit(7)
+  .then(dbworkout => {
+    res.json(dbworkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
 });
 
 // html routes
